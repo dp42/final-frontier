@@ -1,0 +1,9 @@
+{{ partial "header.html" .}}
+
+<div class="articles">
+    {{ range .Pages}}
+      {{ .Render "list" }}
+    {{ end }}
+</div>
+
+{{ partial "footer.html" .}}
