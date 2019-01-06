@@ -1,4 +1,9 @@
 <article>
-  <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-  {{ .Summary }}
+  <div class="entry-header">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <span class="publish-date">{{ .Date.Format "Jan 02, 2006"}}</span>
+  </div>
+  <div class="entry-summary">
+    {{ .Summary }}
+  </div>
 </article>
