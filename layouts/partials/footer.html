@@ -1,19 +1,19 @@
       <footer>
         <div class="accounts">
           {{ if .Site.Params.github }}
-          <a href="{{ .Site.Params.github }}"><i class="fab fa-github"></i></a>
+          <a href="{{ .Site.Params.github }}"><i class="fab fa-github"> GH</i></a>
           {{ end }}
           {{ if .Site.Params.facebook }}
-            <a href="{{ .Site.Params.facebook }}"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{ .Site.Params.facebook }}"><i class="fab fa-facebook-f"> FB</i></a>
           {{ end }}
           {{ if .Site.Params.twitter }}
-            <a href="{{ .Site.Params.twitter }}"><i class="fab fa-twitter"></i></a>
+            <a href="{{ .Site.Params.twitter }}"><i class="fab fa-twitter"> TW</i></a>
           {{ end }}
           {{ if .Site.Params.instagram }}
-            <a href="{{ .Site.Params.instagram }}"><i class="fab fa-instagram"></i></a>
+            <a href="{{ .Site.Params.instagram }}"><i class="fab fa-instagram"> IG</i></a>
           {{ end }}
         </div>
-        <span class="copyright">copyright by {{ .Site.Params.author }}</span>
+        {{ if .Site.Params.copyright }}<span class="copyright">{{ .Site.Params.copyright  }}</span>{{ end }}
       </footer>
     </div>
   </body>

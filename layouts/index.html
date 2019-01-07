@@ -1,7 +1,7 @@
 {{ partial "header.html" .}}
 
 <div class="articles">
-    {{ range (.Paginator 5).Pages}}
+    {{ range (.Paginator 6).Pages}}
       {{ .Render "list" }}
     {{ end }}
 </div>
