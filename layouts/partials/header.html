@@ -3,6 +3,7 @@
   <head>
     <title>{{ .Title }}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
     {{ .Hugo.Generator }}
     {{ $options := (dict "targetPath" "/css/style.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
     {{ $style := resources.Get "sass/style.scss" | resources.ToCSS $options  }}
