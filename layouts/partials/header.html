@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>{{ .Title }}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {{ .Hugo.Generator }}
     {{ $options := (dict "targetPath" "/css/style.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
     {{ $style := resources.Get "sass/style.scss" | resources.ToCSS $options  }}
     {{ template "_internal/google_analytics_async.html" .  }}
     <link rel="stylesheet" href="/css/bootstrap-reboot.css" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ $style.Permalink  }}">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{{ .Title }}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}</title>
   </head>
   <body>
     <div class="wrapper">

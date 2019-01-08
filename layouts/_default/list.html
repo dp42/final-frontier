@@ -1,8 +1,11 @@
-<article>
-  <div class="entry-header">
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-  </div>
-  <div class="entry-summary">
-    {{ .Summary }}
-  </div>
-</article>
+<a href="{{ .Permalink  }}">
+  <article>
+    <div class="entry-header">
+    <h2 class="entry-title">{{ .Title }}</h2>
+    </div>
+    <div class="entry-summary">
+      {{ .Summary }}
+    </div>
+    <span class="read-more">READ MORE</span>
+  </article>
+</a>
