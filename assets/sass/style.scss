@@ -20,9 +20,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 1080px;
+  max-width: 1280px;
   margin: 0 auto;
-  font-size: 1.6rem;
+  font-size: 2.5vw;
 
   main {
     flex: 1;
@@ -167,49 +167,30 @@ ul.pagination {
   flex-wrap: wrap;
   flex: 1;
   justify-content: center;
+  align-content: center;
   margin: 12px 24px;
 
   article {
     position: relative;
+    overflow: hidden;
     width: 300px;
     margin: 12px;
     color: $white;
 
-    .entry-title {
-      padding: 0 4px;
-      font-size: 2rem;
-    }
-
     .entry-summary {
       position: relative;
       z-index: 100;
+      overflow: hidden;
       margin-top: 12px;
       padding: 0 12px;
-      border-left: solid 24px $green;
-      border-right: solid 24px $green;
-      border-radius: 10px;
+      height: 300px;
       background: $black;
     }
 
     &:hover {
       .entry-summary {
-        z-index: 1;
-        border-color: $red;
+        color: $blue;
       }
-    }
-
-    .read-more {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      padding: 6px;
-      border-radius: 10px;
-      background: $red;
-      color: $black;
-      font-size: 1.6rem;
-      font-weight: bold;
     }
   }
 }
@@ -219,23 +200,28 @@ ul.pagination {
 
   .entry-content {
     margin: 12px 0;
-    padding: 0 24px;
+    padding: 24px 2em;
     border-left: solid 24px $green;
     border-right: solid 24px $green;
     border-radius: 10px;
 
+    h2, h3, h4, h5, h6 {
+      color: $yellow;
+    }
+
     img {
       display: block;
-      max-width: 80%;
+      max-width: 90%;
       margin: 12px auto;
     }
 
     pre {
       display: block;
-      width: 85%;
+      width: 90%;
       margin: 12px auto;
       padding: 8px;
       border: solid 2px $white;
+      font-size: 1.4rem;
     }
   }
 }
@@ -252,6 +238,7 @@ ul.pagination {
     border-right: solid 4px $black;
     background: $blue;
     color: $black;
+    font-size: 2.4rem;
   }
 
   .publish-date {
@@ -267,13 +254,29 @@ ul.pagination {
 }
 
 @media screen and (min-width:960px) {
+  .wrapper {
+    font-size: 2.4rem;
+  }
   header h1 {
     font-size: 3.6rem;
   }
+
+  .single-entry .entry-content {
+    padding: 24px calc((100% - 818px) / 2);
+  }
+
 }
 @media screen and (max-width:640px) {
+  .wrapper {
+    font-size: 1.6rem;
+  }
+
   header h1, .wrapper .not-found span {
     font-size: 2.4rem;
+  }
+
+  .articles .entry-summary {
+    display: none;
   }
 
   ul.pagination {
@@ -301,5 +304,14 @@ ul.pagination {
     * {
       font-size: 1.2rem;
     }
+  }
+
+  .entry-header .entry-title {
+    font-size: 1.6rem;
+  }
+
+  .single-entry .entry-content {
+    padding: 0 8px;
+    border: none;
   }
 }
