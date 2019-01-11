@@ -61,64 +61,67 @@ a, {
 
 header {
   margin: 0 24px;
-  padding-top: 24px;
-  text-align: left;
-  background: $black;
+  text-align: right;
+  border-left: 6em solid $yellow;
+  border-bottom: 1em solid $yellow;
+  border-bottom-left-radius: 48px;
+  background: $yellow;
 
   h1 {
     margin: 0;
     padding: 0 12px 0 12px;
-    border-left: solid 12px $yellow;
-    border-right: solid 12px $yellow;
-    border-radius: 10px;
-    line-height: 1.3;
-    background: $yellow;
+    border-bottom-left-radius: 48px;
+    line-height: 1.6;
+    background: $black;
     font-size: 3.75vw;
 
     a, a:hover {
       display: inline-block;
       padding: 0 6px;
-      border-left: solid 4px $black;
-      border-right: solid 4px $black;
-      background: $red;
-      color: $black;
+      color: $cyan;
     }
   }
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: auto 24px;
-  padding-bottom: 24px;
-  background: $black;
-  text-align: center;
+  border-top: 1em solid $yellow;
+  border-left: 6em solid $yellow;
+  border-top-left-radius: 48px;
+  background: $yellow;
 
-  .links {
-    margin: 0 auto;
-    padding: 0 4px;
-    border-left: solid 48px $green;
-    border-right: solid 48px $green;
-    border-radius: 20px;
+  .inner-box {
+    padding: 12px 4px;
+    border-left: solid 48px $black;
+    border-top-left-radius: 64px;
+    background: $black;
+  }
+
+  .accounts {
+    margin-left: 1em;
+    margin-bottom: 0.5em;
 
     a {
       display: inline-block;
-      width: 4rem;
-      height: 4.2rem;
-      margin: 0;
+      width: 1.4em;
+      margin-top: 8px;
+      text-align: center;
+      border-radius: 10px;
       background: $magenta;
       color: $black;
-      font-size: 3.2rem;
+      font-size: 1em;
       font-weight: bold;
     }
   }
 
   .copyright {
-    display: block;
-    margin-top: 8px;
-    text-align: center;
+    display:block;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 1em;
+    background: $black;
     color: $cyan;
+    font-size: 12px;
     font-weight: bold;
   }
 }
@@ -168,13 +171,13 @@ ul.pagination {
   flex: 1;
   justify-content: center;
   align-content: center;
-  margin: 12px 24px;
+  margin: 12px auto;
 
   article {
     position: relative;
     overflow: hidden;
-    width: 300px;
-    margin: 12px;
+    max-width: 80%;
+    margin: 2em auto 0;
     color: $white;
 
     .entry-summary {
@@ -183,7 +186,8 @@ ul.pagination {
       overflow: hidden;
       margin-top: 12px;
       padding: 0 12px;
-      height: 300px;
+      max-height: 10em;
+      max-width: 40em;
       background: $black;
     }
 
@@ -200,9 +204,7 @@ ul.pagination {
 
   .entry-content {
     margin: 12px 0;
-    padding: 24px 2em;
-    border-left: solid 24px $green;
-    border-right: solid 24px $green;
+    padding: 24px 3em;
     border-radius: 10px;
 
     h2, h3, h4, h5, h6 {
@@ -243,12 +245,14 @@ ul.pagination {
 
   .publish-date {
     display: block;
+    padding-right: 2em;
     border-left: solid 4px $black;
     border-right: solid 4px $black;
+    text-align: right;
     text-transform: uppercase;
     background: $blue;
     color: $black;
-    font-size: 1.4rem;
+    font-size: 0.6em;
     font-weight: bold;
   }
 }
@@ -260,12 +264,8 @@ ul.pagination {
   header h1 {
     font-size: 3.6rem;
   }
-
-  .single-entry .entry-content {
-    padding: 24px calc((100% - 818px) / 2);
-  }
-
 }
+
 @media screen and (max-width:640px) {
   .wrapper {
     font-size: 1.6rem;
@@ -273,10 +273,6 @@ ul.pagination {
 
   header h1, .wrapper .not-found span {
     font-size: 2.4rem;
-  }
-
-  .articles .entry-summary {
-    display: none;
   }
 
   ul.pagination {

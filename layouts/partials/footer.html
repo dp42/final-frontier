@@ -1,5 +1,6 @@
       <footer>
-        <div class="links">
+        <div class="inner-box">
+        <div class="accounts">
           {{ if .Site.Params.github }}
           <a href="{{ .Site.Params.github }}" target="_blank"><i class="fab fa-github"></i></a>
           {{ end }}
@@ -12,9 +13,9 @@
           {{ if .Site.Params.instagram }}
             <a href="{{ .Site.Params.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
           {{ end }}
-            <a href="{{ .Site.RSSLink }}" target="_blank"><i class="fas fa-rss"></i></a>
         </div>
-        {{ if .Site.Params.copyright }}<span class="copyright">{{ .Site.Params.copyright  }}</span>{{ end }}
+        <span class="copyright">{{ .Site.Params.copyright | default "copyright" }}</span>
+        </div>
       </footer>
     </div>
   </body>
