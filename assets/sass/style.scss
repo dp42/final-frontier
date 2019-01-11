@@ -245,15 +245,13 @@ ul.pagination {
 
   .publish-date {
     display: block;
-    padding-right: 2em;
     border-left: solid 4px $black;
     border-right: solid 4px $black;
-    text-align: right;
+    text-align: center;
     text-transform: uppercase;
     background: $blue;
     color: $black;
     font-size: 0.6em;
-    font-weight: bold;
   }
 }
 
