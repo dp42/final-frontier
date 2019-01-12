@@ -20,14 +20,16 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 1280px;
-  margin: 0 auto;
   font-size: 2.5vw;
 
   main {
     flex: 1;
-    margin: auto 24px;
-    padding-top: 24px;
+    margin: 2em auto;
+    padding: 0 1em;
+    z-index: 10;
+    width: 100%;
+    max-width: 1280px;
+    background: $black;
   }
 
   .not-found {
@@ -44,7 +46,7 @@ body {
       border-radius: 10px;
       background: $red;
       color: $black;
-      font-size: 3.6rem;
+      font-size: 2em;
       font-weight: bold;
     }
   }
@@ -60,54 +62,49 @@ a, {
 }
 
 header {
-  margin: 0 24px;
-  text-align: right;
-  border-left: 6em solid $yellow;
-  border-bottom: 1em solid $yellow;
-  border-bottom-left-radius: 48px;
-  background: $yellow;
+  //position: sticky;
+  //top: 0;
+    text-align: center;
+  //border-left: 6em solid $yellow;
+  //border-bottom: 1em solid $yellow;
+  //border-bottom-left-radius: 48px;
+  //background: $yellow;
 
   h1 {
     margin: 0;
-    padding: 0 12px 0 12px;
+    padding: 0 12px;
     border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
     line-height: 1.6;
-    background: $black;
-    font-size: 3.75vw;
+    background: $yellow;
+    font-size: 2em;
 
     a, a:hover {
       display: inline-block;
       padding: 0 6px;
-      color: $cyan;
+      color: $black;
     }
   }
 }
 
 footer {
-  margin: auto 24px;
-  border-top: 1em solid $yellow;
-  border-left: 6em solid $yellow;
   border-top-left-radius: 48px;
-  background: $yellow;
-
-  .inner-box {
-    padding: 12px 4px;
-    border-left: solid 48px $black;
-    border-top-left-radius: 64px;
-    background: $black;
-  }
+  border-top-right-radius: 48px;
+  background: $magenta;
 
   .accounts {
-    margin-left: 1em;
-    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0 auto;
 
     a {
       display: inline-block;
       width: 1.4em;
-      margin-top: 8px;
+      margin: 8px;
       text-align: center;
       border-radius: 10px;
-      background: $magenta;
+      background: $green;
       color: $black;
       font-size: 1em;
       font-weight: bold;
@@ -116,11 +113,9 @@ footer {
 
   .copyright {
     display:block;
-    text-align: left;
+    text-align: center;
     margin: 0 auto;
-    padding-left: 1em;
-    background: $black;
-    color: $cyan;
+    color: $black;
     font-size: 12px;
     font-weight: bold;
   }
@@ -175,18 +170,15 @@ ul.pagination {
 
   article {
     position: relative;
-    overflow: hidden;
     max-width: 80%;
-    margin: 2em auto 0;
+    margin: 0 auto 2em;
     color: $white;
 
     .entry-summary {
       position: relative;
-      z-index: 100;
       overflow: hidden;
       margin-top: 12px;
       padding: 0 12px;
-      max-height: 10em;
       max-width: 40em;
       background: $black;
     }
@@ -207,10 +199,6 @@ ul.pagination {
     padding: 24px 3em;
     border-radius: 10px;
 
-    h2, h3, h4, h5, h6 {
-      color: $yellow;
-    }
-
     img {
       display: block;
       max-width: 90%;
@@ -229,28 +217,32 @@ ul.pagination {
 }
 
 .entry-header {
-  text-align: center;
-  border-left: solid 24px $yellow;
-  border-right: solid 24px $yellow;
-  border-radius: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1em 0;
+  text-align: left;
+  background: $black;
+
+  .inner-box {
+    display: inline-block;
+    padding: 0 1em;
+  border-left: solid 2em $green;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+    background: $black;
+  }
 
   .entry-title {
     margin-bottom: 0;
-    border-left: solid 4px $black;
-    border-right: solid 4px $black;
-    background: $blue;
-    color: $black;
-    font-size: 2.4rem;
+    color: $cyan;
+    font-size: 1.3em;
   }
 
   .publish-date {
     display: block;
-    border-left: solid 4px $black;
-    border-right: solid 4px $black;
-    text-align: center;
     text-transform: uppercase;
-    background: $blue;
-    color: $black;
+    color: $magenta;
     font-size: 0.6em;
   }
 }
@@ -258,9 +250,6 @@ ul.pagination {
 @media screen and (min-width:960px) {
   .wrapper {
     font-size: 2.4rem;
-  }
-  header h1 {
-    font-size: 3.6rem;
   }
 }
 
@@ -298,10 +287,6 @@ ul.pagination {
     * {
       font-size: 1.2rem;
     }
-  }
-
-  .entry-header .entry-title {
-    font-size: 1.6rem;
   }
 
   .single-entry .entry-content {

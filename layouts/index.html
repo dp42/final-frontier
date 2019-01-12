@@ -1,10 +1,10 @@
 {{ partial "header.html" .}}
 
-<div class="articles">
+<main role="main" class="articles">
     {{ range (.Paginator 12).Pages}}
       {{ .Render "list" }}
     {{ end }}
-</div>
+</main>
 
 {{ template "_internal/pagination.html" . }}
 {{ partial "footer.html" .}}

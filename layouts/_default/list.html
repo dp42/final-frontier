@@ -1,7 +1,10 @@
 <a href="{{ .Permalink  }}">
   <article>
     <div class="entry-header">
-    <h2 class="entry-title">{{ .Title }}</h2>
+    <div class="inner-box">
+      <h2 class="entry-title">{{ .Title }}</h2>
+      <span class="publish-date">{{ .Date.Format "Jan 02, 2006"}}</span>
+    </div>
     </div>
     <div class="entry-summary">
       {{ .Summary }}

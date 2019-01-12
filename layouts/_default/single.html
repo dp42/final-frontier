@@ -1,8 +1,10 @@
 {{ partial "header.html" .}}
 <main role="main" class="single-entry">
   <div class="entry-header">
+    <div class="inner-box">
   <h2 class="entry-title">{{ .Title }}</h2>
-  <span class="publish-date">POSTED ON {{ .Date.Format "Jan 02, 2006"}}</span>
+  <span class="publish-date">{{ .Date.Format "Jan 02, 2006"}}</span>
+    </div>
   </div>
   <div class="entry-content">
   {{ .Content }}
