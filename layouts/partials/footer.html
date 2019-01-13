@@ -1,16 +1,16 @@
       <footer>
         <div class="accounts">
           {{ if .Site.Params.github }}
-          <a href="{{ .Site.Params.github }}" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="{{ .Site.Params.github }}" title="github" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
           {{ end }}
           {{ if .Site.Params.facebook }}
-            <a href="{{ .Site.Params.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{ .Site.Params.facebook }}" title="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
           {{ end }}
           {{ if .Site.Params.twitter }}
-            <a href="{{ .Site.Params.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="{{ .Site.Params.twitter }}" title="twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
           {{ end }}
           {{ if .Site.Params.instagram }}
-            <a href="{{ .Site.Params.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="{{ .Site.Params.instagram }}" title="instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
           {{ end }}
         </div>
         <span class="copyright">{{ .Site.Params.copyright | default "copyright" }}</span>
