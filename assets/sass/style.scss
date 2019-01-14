@@ -38,7 +38,7 @@ h3 {
 
 main {
   flex: 1;
-  margin: 2em auto;
+  margin: 1em auto;
   padding: 0 1em;
   z-index: 10;
   width: 100%;
@@ -47,28 +47,38 @@ main {
 }
 
 .site-header {
+  border-bottom: 8px solid $yellow;
+  border-bottom-left-radius: 48px;
+  background: $yellow;
+
   h1 {
-    margin: 0;
-    padding: 0 0.6em;
+    margin-left: 64px;
+    padding: 0 2em;
     border-bottom-left-radius: 48px;
-    border-bottom-right-radius: 48px;
     line-height: 1.6;
     text-align: center;
-    background: $yellow;
+    background: $black;
     font-size: 2em;
 
     a,
     &:hover {
-      padding: 0 6px;
-      color: $black;
+      color: $yellow;
     }
   }
 }
 
 .site-footer {
-  border-top-left-radius: 48px;
+  border-right: 64px solid $magenta;
+  border-top: 8px solid $magenta;
   border-top-right-radius: 48px;
   background: $magenta;
+
+  .inner-box {
+    padding-top: 12px;
+    padding-left: 48px;
+    border-top-right-radius: 48px;
+    background: $black;
+  }
 
   .accounts {
     display: flex;
@@ -93,7 +103,7 @@ main {
     display: block;
     text-align: center;
     margin: 0 auto;
-    color: $black;
+    color: $cyan;
     font-size: 12px;
     font-weight: bold;
   }
@@ -164,13 +174,13 @@ ul.pagination {
   align-content: center;
 
   article {
-    width: 100%;
+    //width: 100%;
     margin: 0 auto 2em;
     color: $white;
 
     .entry-summary {
       margin: 0 auto;
-      width: 50%;
+      max-width: 800px;
     }
 
     &:hover {
@@ -182,11 +192,7 @@ ul.pagination {
 }
 
 .entry-header {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  z-index: 10;
-  padding: 1em 0 12px;
+  padding: 1em 0;
   text-align: center;
   background: $black;
 
@@ -215,10 +221,15 @@ ul.pagination {
   }
 }
 
+.single-entry .entry-header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .entry-content {
-  margin: 12px 0;
-  padding: 24px 3em;
-  border-radius: 10px;
+  padding: 0 1em;
 
   img {
     display: block;
