@@ -16,42 +16,6 @@ body {
   color: $white;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-size: 2.5vw;
-
-  main {
-    flex: 1;
-    margin: 2em auto;
-    padding: 0 1em;
-    z-index: 10;
-    width: 100%;
-    max-width: 1280px;
-    background: $black;
-  }
-
-  .not-found {
-    flex: 1;
-    margin: auto;
-
-    span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      padding: 6px;
-      border-radius: 10px;
-      background: $red;
-      color: $black;
-      font-size: 2em;
-      font-weight: bold;
-    }
-  }
-}
-
 a, {
   color: $blue;
 
@@ -61,10 +25,31 @@ a, {
   }
 }
 
-header {
+h3 {
+  font-size: 1.3em;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 2.5vw;
+}
+
+main {
+  flex: 1;
+  margin: 2em auto;
+  padding: 0 1em;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  background: $black;
+}
+
+.site-header {
   h1 {
     margin: 0;
-    padding: 0 12px;
+    padding: 0 0.6em;
     border-bottom-left-radius: 48px;
     border-bottom-right-radius: 48px;
     line-height: 1.6;
@@ -72,15 +57,15 @@ header {
     background: $yellow;
     font-size: 2em;
 
-    a, a:hover {
-      display: inline-block;
+    a,
+    &:hover {
       padding: 0 6px;
       color: $black;
     }
   }
 }
 
-footer {
+.site-footer {
   border-top-left-radius: 48px;
   border-top-right-radius: 48px;
   background: $magenta;
@@ -105,7 +90,7 @@ footer {
   }
 
   .copyright {
-    display:block;
+    display: block;
     text-align: center;
     margin: 0 auto;
     color: $black;
@@ -152,6 +137,24 @@ ul.pagination {
   }
 }
 
+.not-found {
+  flex: 1;
+  margin: auto;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 6px;
+    border-radius: 10px;
+    background: $red;
+    color: $black;
+    font-size: 2em;
+    font-weight: bold;
+  }
+}
 
 .articles {
   display: flex;
@@ -159,21 +162,15 @@ ul.pagination {
   flex: 1;
   justify-content: center;
   align-content: center;
-  margin: 12px auto;
 
   article {
-    position: relative;
-    max-width: 80%;
+    width: 100%;
     margin: 0 auto 2em;
     color: $white;
 
     .entry-summary {
-      position: relative;
-      overflow: hidden;
-      margin-top: 12px;
-      padding: 0 12px;
-      max-width: 40em;
-      background: $black;
+      margin: 0 auto;
+      width: 50%;
     }
 
     &:hover {
@@ -184,46 +181,23 @@ ul.pagination {
   }
 }
 
-.single-entry {
-  margin: 0 24px;
-
-  .entry-content {
-    margin: 12px 0;
-    padding: 24px 3em;
-    border-radius: 10px;
-
-    img {
-      display: block;
-      max-width: 90%;
-      margin: 12px auto;
-    }
-
-    pre {
-      display: block;
-      width: 90%;
-      margin: 12px auto;
-      padding: 8px;
-      border: solid 2px $white;
-      font-size: 1.4rem;
-    }
-  }
-}
-
 .entry-header {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
   z-index: 10;
-  padding: 1em 0;
-  text-align: left;
+  padding: 1em 0 12px;
+  text-align: center;
   background: $black;
 
   .inner-box {
     display: inline-block;
+    margin: 0 auto;
     padding: 0 1em;
-  border-left: solid 2em $green;
-  border-top-left-radius: 2em;
-  border-bottom-left-radius: 2em;
+    border-left: solid 2em $green;
+    border-right: solid 2em $green;
+    border-radius: 2em;
+    text-align: left;
     background: $black;
   }
 
@@ -241,18 +215,40 @@ ul.pagination {
   }
 }
 
-@media screen and (min-width:960px) {
+.entry-content {
+  margin: 12px 0;
+  padding: 24px 3em;
+  border-radius: 10px;
+
+  img {
+    display: block;
+    max-width: 90%;
+    margin: 12px auto;
+  }
+
+  pre {
+    display: block;
+    width: 90%;
+    margin: 12px auto;
+    padding: 8px;
+    border: solid 2px $white;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
   .wrapper {
     font-size: 2.4rem;
   }
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width: 640px) {
   .wrapper {
     font-size: 1.6rem;
   }
 
-  header h1, .wrapper .not-found span {
+  .site-header h1,
+  .wrapper .not-found span {
     font-size: 2.4rem;
   }
 
