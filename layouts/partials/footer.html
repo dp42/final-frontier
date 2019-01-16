@@ -13,6 +13,9 @@
           {{ if .Site.Params.instagram }}
           <a href="{{ .Site.Params.instagram }}" title="instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
           {{ end }}
+          {{ if .Site.Params.email }}
+          <a href="mailto:{{ .Site.Params.email }}" title="email" target="_blank" rel="noopener"><i class="far fa-envelope"></i></a>
+          {{ end }}
         </div>
         <span class="copyright">{{ .Site.Params.copyright | default "copyright" }}</span>
         </div>

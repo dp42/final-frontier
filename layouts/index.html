@@ -1,7 +1,7 @@
 {{ partial "header.html" .}}
 
 <main role="main" class="articles">
-    {{ range (.Paginator 12).Pages}}
+    {{ range (.Paginator (.Site.Params.paginate | default 8)).Pages}}
       {{ .Render "list" }}
     {{ end }}
 </main>
